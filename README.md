@@ -8,7 +8,9 @@ timelapse is a bash script that takes in 2 parameters:
 
 * *@param2* = The FPS of the exported timelapse. This defaults to 24
 
-### Installation ###
+*Installation* 
 
     chmod +x timelapse
     sudo cp timelapse /usr/bin/timelapse
+
+----
