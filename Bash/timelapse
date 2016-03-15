@@ -1,0 +1,41 @@
+#!/bin/bash
+
+NAME=${1:-rendered}
+FPS=${2:-24}
+DIRECTORY=export
+
+function export {
+    for i in $( ls); do
+        darktable-cli $i $i.xmp $DIRECTORY/$i.jpg
+    done
+}
+
+# create file list
+function listFiles {
+    ls -v export | grep jpg > $DIRECTORY/files.txt
+}
+
+# render
+function render () {
+    cd export && mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=21600000 -o ~/Videos/$1.avi -mf type=jpeg:fps=$2 mf://@files.txt -vf scale=1920:1080
+}
+
+function cleanup {
+    cp rendered.avi . && cd .
+    rm -r export
+}
+
+# exit program
+function quit {
+exit
+}
+
+if [ ! -d "$DIRECTORY" ]; then 
+  export
+  listFiles
+  render $NAME $FPS
+  quit
+else
+  render $NAME $FPS
+  quit
+fi
