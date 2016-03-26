@@ -4,6 +4,7 @@ NAME=${1:-rendered}
 FPS=${2:-24}
 QUALITY=${3:-normal}
 DIRECTORY=export
+# TODO Add JPEG deflickering option
 # JPEG=${3:-false}
 
 if [ $3 = "high" ]; then
