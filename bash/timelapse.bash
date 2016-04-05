@@ -9,6 +9,7 @@ DIRECTORY=~/Videos/export
 # JPEG=${3:-false}
 
 # Menu variables
+QUIT="Save & Continue"
 SET_NAME="Set Title"
 NAME_PROMPT="Enter new Timelapse Title (Current title is $NAME): "
 SET_FPS="Set FPS"
@@ -19,9 +20,8 @@ SET_DIR="Set target Directory"
 DIR_PROMPT="Set target directory (Current path is $DIRECTORY): "
 #SET_2PASS="Enable 2-Pass JPEG Deflickering"
 #SET_MOGRIFY="Set Mogrify Value"
-QUIT="Save & Continue"
-options=("$SET_NAME" "$SET_FPS" "$SET_QUALITY" "$SET_DIR" "$QUIT")
-PS3='Please select a menu option (7 to continue): '
+options=("$QUIT" "$SET_NAME" "$SET_FPS" "$SET_QUALITY" "$SET_DIR")
+PS3='Please select a menu option (1 to continue): '
 
 # This section sets the render quality
 LAVCOPTS="vcodec=mpeg4:vbitrate=21600000"
