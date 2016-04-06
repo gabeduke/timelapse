@@ -5,8 +5,6 @@ NAME=${1:-rendered}
 FPS=${2:-24}
 QUALITY=${3:-normal}
 DIRECTORY=4:~/Videos/export
-# TODO Add JPEG deflickering option
-# JPEG=${3:-false}
 
 # Menu variables
 QUIT="Save & Continue"
@@ -26,14 +24,13 @@ PS3='Please select a menu option (1  to continue): '
 # This section sets the render quality
 LAVCOPTS="vcodec=mpeg4:vbitrate=21600000"
 if [ $3 = "high" ]; then
-# TODO check syntax & add low quality pass
+# TODO check syntax
     LAVCOPTS=$LAVCOPTS+":trell:mbd=2:dc=10"
     fi
 
 # first totals the number of files then exports
 # each RAW image using darktable-cli while incrementing
 # the counter and comparing to the total variable above
-# TODO change CR2 to a RAW Variable
 function export() {
 TOTAL="$(ls *.CR2 -l | wc -l)"
     for i in $( ls *.CR2 ); do
