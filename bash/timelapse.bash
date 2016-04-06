@@ -4,7 +4,7 @@
 NAME=${1:-rendered}
 FPS=${2:-24}
 QUALITY=${3:-normal}
-DIRECTORY=~/Videos/export
+DIRECTORY=4:~/Videos/export
 # TODO Add JPEG deflickering option
 # JPEG=${3:-false}
 
@@ -21,7 +21,7 @@ DIR_PROMPT="Set target directory (Current path is $DIRECTORY): "
 #SET_2PASS="Enable 2-Pass JPEG Deflickering"
 #SET_MOGRIFY="Set Mogrify Value"
 options=("$QUIT" "$SET_NAME" "$SET_FPS" "$SET_QUALITY" "$SET_DIR")
-PS3='Please select a menu option (1 to continue): '
+PS3='Please select a menu option (1  to continue): '
 
 # This section sets the render quality
 LAVCOPTS="vcodec=mpeg4:vbitrate=21600000"
