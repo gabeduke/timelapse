@@ -4,7 +4,8 @@
 NAME=${1:-rendered}
 FPS=${2:-24}
 QUALITY=${3:-normal}
-DIRECTORY=4:~/Videos/export
+DIRECTORY=$(pwd)
+EXPORT=$DIRECTORY/export
 
 # Menu variables
 QUIT="Save & Continue"
@@ -23,10 +24,10 @@ PS3='Please select a menu option (1  to continue): '
 
 # This section sets the render quality
 LAVCOPTS="vcodec=mpeg4:vbitrate=21600000"
-if [ $3 = "high" ]; then
+#if [ $3 = "high" ]; then
 # TODO check syntax
-    LAVCOPTS=$LAVCOPTS+":trell:mbd=2:dc=10"
-    fi
+#    LAVCOPTS=$LAVCOPTS+":trell:mbd=2:dc=10"
+#    fi
 
 # first totals the number of files then exports
 # each RAW image using darktable-cli while incrementing
@@ -34,7 +35,7 @@ if [ $3 = "high" ]; then
 function export() {
 TOTAL="$(ls *.CR2 -l | wc -l)"
     for i in $( ls *.CR2 ); do
-        darktable-cli $i $i.xmp $DIRECTORY/$i.jpg
+        darktable-cli $i $i.xmp $EXPORT/$i.jpg
         COUNTER=$((COUNTER+1))
         printf "%s/%s\n" "$COUNTER" "$TOTAL"
     done
@@ -42,13 +43,13 @@ TOTAL="$(ls *.CR2 -l | wc -l)"
 
 # create file list
 function listFiles {
-    ls -v export | grep jpg > $DIRECTORY/files.txt
+    ls -v $EXPORT | grep jpg > $EXPORT/files.txt
 }
 
 # render
 function render () {
-    cd $DIRECTORY && mencoder -nosound -ovc lavc -lavcopts $3 -o $1.avi -mf type=jpeg:fps=$2 mf://@files.txt -vf scale=1920:1080
-    notify-send -t 5000 "Your timelapse has finished rendering and is located at " + $1
+    cd $EXPORT && mencoder -nosound -ovc lavc -lavcopts $LAVCOPTS -o ~/Videos/$NAME.avi -mf type=jpeg:fps=$FPS mf://@files.txt -vf scale=1920:1080
+    notify-send -t 5000 "Your timelapse has finished rendering"
 }
 
 function cleanup {
@@ -107,15 +108,16 @@ done
 # If the export directory exists already then render the Timelapse
 # Allows the user to define the script variables manually
 ###################################################################
-if [ ! -d "$DIRECTORY" ]; then
+if [ ! -d "$EXPORT" ]; then
   export
   listFiles
-  if [ ! $JPEG = "false" ]; then
-      jpegDeflicker
-  fi
-  render $NAME $FPS $LAVCOPTS
+  #if [ ! $JPEG = "false" ]; then
+  #    jpegDeflicker
+  #fi
+  render
   quit
 else
-  render $NAME $FPS $LAVCOPTS
+  listFiles
+  render
   quit
 fi
