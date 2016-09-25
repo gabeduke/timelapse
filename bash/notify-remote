@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 hosts="sataleet.local mothership.local"
 command="DISPLAY=:0 notify-send"
