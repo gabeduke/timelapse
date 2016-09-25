@@ -1,0 +1,11 @@
+[Unit]
+Description=logWatch
+
+[Service]
+ExecStart=/home/gabeduke/logWatch
+StandardOutput=syslog
+StandardError=syslog
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target

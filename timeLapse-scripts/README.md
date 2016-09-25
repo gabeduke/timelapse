@@ -1,5 +1,3 @@
-# timelapse-scripts
-
 ## timelapse ##
 
 timelapse is a bash script for compiling timelapses from Canon RAW Images on Linux. It can take 3 parameters which set the Title of the exported .avi file, the FPS and the quality of the final render. When running the script, there will be a menu prompt that allows all of these variables to be adjusted manually.
