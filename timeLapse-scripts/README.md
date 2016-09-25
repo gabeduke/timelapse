@@ -15,4 +15,5 @@ Add the Canon RAW files to a directory and import into Darktable this will allow
     cd [image directory]
     timelapse [name] [fps] [quality]
 
+
 ----
