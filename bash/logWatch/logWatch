@@ -1,1 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+supervisorctl status | if grep -q RUNNING; then
+logger RabbitMQ is running
+exit 1
+else
+/usr/local/bin/notify-remote RabbitMQ_is_dead
+logger RabbitMQ is dead
+fi
