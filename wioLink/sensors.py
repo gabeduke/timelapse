@@ -14,7 +14,7 @@ requests_log.propagate = True
 
 def formatUrl(node):
     requests.get(wio_url + node + wio_token)
-    return requests
+    return requests.get
 
 def formatJson(x):
     reading = x.json()
