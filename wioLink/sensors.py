@@ -16,6 +16,11 @@ def formatUrl(node):
     requests.get(wio_url + node + wio_token)
     return requests
 
+def formatJson(x):
+    reading = x.json()
+    dump = json.dumps(reading)
+    return json.loads(dump)
+
 ##GET data##
 wio_url = "https://us.wio.seeed.io"
 wio_token = "?access_token=eb306fbdff26c105bf271f7a4c24f91a"
@@ -32,11 +37,6 @@ airQuality = formatUrl(wio_airQuality)
 ##FORMAT JSON##
 today = datetime.datetime.now().strftime("%Y-%m-%d %H")
 
-def formatJson(x):
-    reading = x.json()
-    dump = json.dumps(reading)
-    return json.loads(dump)
-
 value = formatJson(moisture)
 moisture = value['moisture']
 
@@ -45,6 +45,9 @@ humidity = value['humidity']
 
 value = formatJson(temp)
 temp = value['fahrenheit_degree']
+
+value = formatJson(airQuality)
+temp = value['quality']
 
 ##POST to Thinkspeak##
 thingspeak_url = "https://api.thingspeak.com/update.json"
