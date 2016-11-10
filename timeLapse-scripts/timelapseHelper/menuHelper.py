@@ -21,7 +21,7 @@ def export():
     run_bash_function('scripts', 'export', properties)
 
 
-def listFiles():
+def list_files():
     run_bash_function('scripts', 'listFiles', properties)
 
 

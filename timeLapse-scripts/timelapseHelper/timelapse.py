@@ -1,9 +1,9 @@
 from menuHelper import *
+from properties import *
 import os
 
 # variables
 loop = True
-exportPath = os.getcwd() + '/export'
 
 def print_menu():
     print 30 * "-", "MENU", 30 * "-"
@@ -12,35 +12,39 @@ def print_menu():
     print "3. Set FPS"
     print "4. Set Quality"
     print "5. Set Directory"
-    print "4. Exit"
+    print "6. Exit"
     print 67 * "-"
 
 
 def export_render():
-    if exportPath:
+    if os.path.isdir(EXPORT):
         export()
-        listFiles()
+        list_files()
         render()
     else:
-        listFiles()
+        list_files()
         render()
 
 
 
 while loop:
     print_menu()
-    choice = input("What will you choose: ")
+    choice = input("Make an assessment: ")
 
-    if choice ==1:
+    if choice == 1:
         export()
-        listFiles()
+        list_files()
         render()
     elif choice == 2:
-        rename()
+        NAME = input("Timelapse name: ")
     elif choice == 3:
-        sync_hotfix(hotfix_ssh)
+        FPS = input('New frame rate: ')
     elif choice == 4:
+        QUALITY = input("Quality: ")  # TODO make this a choice param
+    elif choice == 5:
+        EXPORT = input('Choose a new directory: ')
+    elif choice == 6:
         print "Exiting Program"
         loop = False
     else:
-        raw_input("Wrong option selection. Enter any key to try again..")
+        raw_input("Invalid option. Enter any key to try again..")
