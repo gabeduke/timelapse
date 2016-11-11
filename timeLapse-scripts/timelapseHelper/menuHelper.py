@@ -1,7 +1,7 @@
 import subprocess
 from properties import *
 
-properties = [NAME, FPS, QUALITY, DIRECTORY, EXPORT]
+properties = [NAME, FPS, QUALITY, DIRECTORY, EXPORT_DIR]
 properties = ','.join(map(str, properties))
 
 
