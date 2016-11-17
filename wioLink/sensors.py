@@ -1,5 +1,4 @@
 #!usr/bin/env python
-from enum import Enum
 from properties import *
 
 import requests
@@ -15,12 +14,23 @@ requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True
 
 
-def format_url(node, token):
-    req = requests.get(wio_url + node.value + token)
-    print req.text
+def mean(numbers):
+    return float(sum(numbers)) / max(len(numbers), 1)
 
-    resp_dict = json.loads(req._content)  # loads the request into a dictonary for parsing
-    return resp_dict[node.name]  # parses the value from the request dictionary
+
+def get_wio_sensor_data(node, token):
+    l = []
+    for x in range(0, 3):
+        req = requests.get(wio_url + node.value + token)
+
+        resp_dict = json.loads(req._content)  # loads the request into a dictonary for parsing
+        sensor_data = resp_dict[node.name]  # parses the value from the request dictionary
+
+        l.append(sensor_data)
+
+    print l
+    return mean(l)
+
 
 
 def post_data_to_thinkspeak(fieldName, json):
@@ -29,5 +39,5 @@ def post_data_to_thinkspeak(fieldName, json):
     print(req.text)
 
 
-wioStamp = format_url(NodeProperties.moisture, wio_pete_token)
+wioStamp = get_wio_sensor_data(NodeProperties.moisture, wio_pete_token)
 post_data_to_thinkspeak(NodeMap.moisture, wioStamp)
