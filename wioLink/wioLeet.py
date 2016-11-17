@@ -32,16 +32,6 @@ def print_variables():
     print 67 * "-"
 
 
-def export_render():
-    if os.path.isdir(EXPORT_DIR):
-        export()
-        list_files()
-        render()
-    else:
-        list_files()
-        render()
-
-
 while loop:
     if cont:
         print_variables()
