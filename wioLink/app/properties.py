@@ -13,6 +13,13 @@ wio_airQuality = "/v1/node/GroveAirqualityA0/quality"
 thingspeak_url = "https://api.thingspeak.com/update.json"
 thingspeak_apiKey = "Y35LZQ4BTRZBMN37"
 
+# The name your bucket will appear with in Initial State
+BUCKET_NAME = "dashboard"
+# The hidden bucket key that associates the data w/a particular bucket
+BUCKET_KEY = "D9DPURKHQSED"
+# Initial State access key - found under "Account"
+IS_ACCESS_KEY = "5al79nGUd8wzfasZIeVE4IHAB3PRbaqJ"
+
 
 class NodeProperties(Enum):
     moisture = wio_moistureNode

@@ -1,5 +1,6 @@
 #!usr/bin/env python
 from properties import *
+from ISStreamer.Streamer import Streamer
 import requests
 import json
 import logging
@@ -35,3 +36,15 @@ def post_data_to_thinkspeak(field_name, sensor_value):
     payload = {'api_key': thingspeak_apiKey, field_name.value: sensor_value}
     req = requests.post(thingspeak_url, data=payload)
     print(req.text)
+
+
+def post_data_to_initialstate(field_name, sensor_value):
+    streamer = Streamer(bucket_name=BUCKET_NAME, bucket_key=BUCKET_KEY, access_key=IS_ACCESS_KEY)
+
+    # send some data
+    streamer.log(field_name, sensor_value)
+
+    # flush and close the stream
+    streamer.close()
+
+
