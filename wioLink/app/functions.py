@@ -20,7 +20,8 @@ def mean(numbers):
 def get_wio_sensor_data(node, token):
     l = []
     for x in range(0, 3):
-        req = requests.get(wio_url + node.value + token)
+        val = getattr(NodeProperties, node)
+        req = requests.get(wio_url + val + token)
 
         resp_dict = json.loads(req.content)  # loads the request into a dictonary for parsing
         sensor_data = resp_dict[node.name]  # parses the value from the request dictionary
