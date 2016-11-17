@@ -1,4 +1,4 @@
-from wioLink import *
+from enum import Enum
 
 
 # # GET data # #
