@@ -1,10 +1,6 @@
 #!usr/bin/env python
 from properties import *
 
-import requests
-import json
-import logging
-
 
 # # Enable Logging # #
 logging.basicConfig()
