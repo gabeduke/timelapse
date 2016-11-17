@@ -27,7 +27,7 @@ def get_wio_sensor_data(node, token):
 
         l.append(sensor_data)
 
-    print l
+    print(l)
     return mean(l)
 
 
