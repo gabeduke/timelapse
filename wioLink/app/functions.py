@@ -32,8 +32,9 @@ def get_wio_sensor_data(node, token):
     return mean(l)
 
 
-def post_data_to_thinkspeak(field_name, sensor_value):
-    payload = {'api_key': thingspeak_apiKey, field_name.value: sensor_value}
+def post_data_to_thinkspeak(data):
+    payload = {'api_key': thingspeak_apiKey}
+    payload.update(data)
     req = requests.post(thingspeak_url, data=payload)
     print(req.text)
 
@@ -46,5 +47,3 @@ def post_data_to_initialstate(field_name, sensor_value):
 
     # flush and close the stream
     streamer.close()
-
-
