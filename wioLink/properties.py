@@ -16,7 +16,13 @@ thingspeak_apiKey = "Y35LZQ4BTRZBMN37"
 
 class NodeProperties(Enum):
     moisture = wio_moistureNode
+    humidity = wio_humidityNode
+    temp = wio_tempNode
+    airQuality = wio_airQuality
 
 
 class NodeMap(Enum):
     moisture = 'field1'
+    humidity = 'field2'
+    temp = 'field3'
+    airQuality = 'field4'
