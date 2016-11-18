@@ -1,4 +1,4 @@
-from wioLink.app.properties import *
+from wioLeet.app.properties import *
 
 loop = True
 cont = False
