@@ -5,7 +5,7 @@ setup(
     name="wioLeet",
 
     # Version number (initial):
-    version="0.1.0",
+    version="0.1.1",
 
     # Application author details:
     author="dukeman",
@@ -18,7 +18,7 @@ setup(
     include_package_data=True,
 
     # Details
-     url="http://pypi.python.org/pypi/wioLeet_v010/",
+     url="http://pypi.python.org/pypi/wioLeet_v011/",
 
     #
     # license="LICENSE.txt",
@@ -28,7 +28,7 @@ setup(
 
     # Dependent packages (distributions)
     install_requires=[
-        "enum",
+        "enum", "ISStreamer"
 
     ],
 )
