@@ -10,7 +10,7 @@ REQUIREMENTS
 This module requires the following modules:
 
  * Python version: 2.7
- * Python packages: enum, ISStreamer
+ * Python packages: enum, ISStreamer, smtplib
  
 
 INSTALLATION
@@ -27,3 +27,9 @@ INSTALLATION
 crontab -u [user] -e << '* * * * * [user] /usr/bin/python /pathToApp/run.py >> /var/log/wioLeet.log
 sudo chown /var/log/wioLeet.log
 ```
+
+
+PACKAGING
+---------
+ 
+ * in root dir run `python setup.py sdist`

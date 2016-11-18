@@ -1,4 +1,5 @@
 from functions import *
+from mailer import main
 
 wioMoistureStamp = get_wio_sensor_data(NodeProperties.moisture, wio_pete_token)
 wioHumidityStamp = get_wio_sensor_data(NodeProperties.humidity, wio1_token)
@@ -13,3 +14,6 @@ post_data_to_thinkspeak(data_dict)
 post_data_to_initialstate(NodeProperties.moisture.name, wioMoistureStamp)
 post_data_to_initialstate(NodeProperties.fahrenheit_degree.name, wioTemperatureStamp)
 post_data_to_initialstate(NodeProperties.humidity.name, wioHumidityStamp)
+
+if wioMoistureStamp <= 450:
+    main()
