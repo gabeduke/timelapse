@@ -31,3 +31,7 @@ def render():
 
 def rename():
     run_bash_function('scripts', 'rename', properties)
+
+
+def render_jpegs():
+    run_bash_function('scripts', 'renderJpegs', properties)

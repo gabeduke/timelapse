@@ -5,15 +5,14 @@ import os
 
 # variables
 loop = True
-cont = False
 user_input = None
 
 
 def print_menu():
     print 2 * "\n"
     print 30 * "-", "MENU", 30 * "-"
-    print "1. Continue with Defaults"
-    print "2. Rename Timelapse"
+    print "1. Export Timelapse"
+    print "2. Rename"
     print "3. Set FPS"
     print "4. Set Quality"
     print "5. Set Directory"
@@ -30,23 +29,28 @@ def print_variables():
     print 'Quality: ' + QUALITY
     print 'FPS: ' + str(FPS)
     print 67 * "-"
+    print "\n"
+    raw_input("Hit any key to continue... ")
 
 
 def export_render():
-    if os.path.isdir(EXPORT_DIR):
+    file_extensions = '.CR2'
+    for filename in os.listdir(os.curdir):
+        if filename.endswith(file_extensions):
+            raw_dir = True
+
+    if raw_dir and os.path.isdir(EXPORT_DIR):
         export()
         list_files()
         render()
-    else:
+    elif raw_dir:
         list_files()
         render()
+    else:
+        render_jpegs()
 
 
 while loop:
-    if cont:
-        print_variables()
-    cont = True
-    print_menu()
     choice = input("Make an assessment: ")
 
     if choice == 1:
