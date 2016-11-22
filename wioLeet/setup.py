@@ -28,7 +28,7 @@ setup(
 
     # Dependent packages (distributions)
     install_requires=[
-        "enum", "ISStreamer"
+        "enum", "ISStreamer", "httplib2", "google-api-python-client"
 
     ],
 )
