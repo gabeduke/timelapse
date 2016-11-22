@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import forecastio
 from mailer import SendMessage
 
