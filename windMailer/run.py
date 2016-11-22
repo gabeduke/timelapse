@@ -1,5 +1,5 @@
-from windMailer.mailer import SendMessage
 import forecastio
+from mailer import SendMessage
 
 api_key = "be063e11c53854ceb6e27afed0057aec"
 lat = "37.5000327"
@@ -22,7 +22,8 @@ print "-------------------------- DAILY --------------------------"
 for dailyData in byDay.data:
     wind = dailyData.windSpeed
     time = dailyData.time
-    message = "Wind is expected to be " + str(wind) + "mph on " + str(time.day)
+    message = "Wind is expected to be " + str(wind) + "mph on " + str(time.strftime("%A"))
+    print message
 
-    if wind > 6:
+    if wind > 8:
         sendMessage(message)
