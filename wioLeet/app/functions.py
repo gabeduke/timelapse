@@ -49,18 +49,3 @@ def post_data_to_initialstate(field_name, sensor_value):
     # flush and close the stream
     streamer.close()
 
-
-# TODO configure properties & use api key
-def send_email():
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.ehlo()
-    server.docmd('AUTH', 'XOAUTH2 ' + base64.b64encode(auth_string))
-    destination = "REPLACE_WITH_YOUR_EMAIL@gmail.com"
-    text = "Motion has been detected at your house!"
-
-    server.login(my_email, my_password)
-    server.sendmail(my_email, destination, text)
-    server.quit()
-    print("Your email has been sent!")
