@@ -13,9 +13,9 @@ data_dict = {NodeMap.moisture.value: wioMoistureStamp,
 
 post_data_to_thinkspeak(data_dict)
 
-post_data_to_initialstate(moistureName, wioMoistureStamp)
-post_data_to_initialstate(humidityName, wioHumidityStamp)
-post_data_to_initialstate(fahrenheit_degreeName, wioTemperatureStamp)
+post_data_to_initialstate(NodeMap.moisture.name, wioMoistureStamp)
+post_data_to_initialstate(NodeMap.humidity.name, wioHumidityStamp)
+post_data_to_initialstate(NodeMap.temp.name, wioTemperatureStamp)
 
 if wioMoistureStamp <= 450:
     main()
