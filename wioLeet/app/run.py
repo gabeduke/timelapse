@@ -11,9 +11,9 @@ wioMoistureStamp = get_wio_sensor_data2(moistureName, wio_moistureNode, wio_pete
 wioHumidityStamp = get_wio_sensor_data2(humidityName, wio_humidityNode, wio1_token)
 wioTemperatureStamp = get_wio_sensor_data2(fahrenheit_degreeName, wio_tempNode, wio1_token)
 
-data_dict = {NodeMap.moisture.value: wioMoistureStamp,
-             NodeMap.humidity.value: wioHumidityStamp,
-             NodeMap.temp.value: wioTemperatureStamp}
+data_dict = {"field1": wioMoistureStamp,
+             "field2": wioHumidityStamp,
+             "field3": wioTemperatureStamp}
 
 post_data_to_thinkspeak(data_dict)
 
