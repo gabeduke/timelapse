@@ -21,6 +21,12 @@ BUCKET_KEY = "D9DPURKHQSED"
 IS_ACCESS_KEY = "5al79nGUd8wzfasZIeVE4IHAB3PRbaqJ"
 
 
+moistureName = "moisture"
+humidityName = "humidity"
+fahrenheit_degreeName = "fahrenheit_degree"
+airQualityName = "airQuality"
+
+
 class NodeProperties(Enum):
     moisture = wio_moistureNode
     humidity = wio_humidityNode
