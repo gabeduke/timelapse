@@ -57,7 +57,7 @@ def CreateMessage(sender, to, subject, msgHtml, msgPlain):
 
 
 def main():
-    to = "zepterfd@gmail.com"
+    to = "gabeduke@gmail.com"
     sender = "gabeduke@gmail.com"
     subject = "ALERT: Moisture threshold has been breached"
     msgHtml = "It looks like your plants may need water.<br>For more details please visit the <a href=\"https://app.initialstate.com/#/tiles\">dashboard</a> "
