@@ -11,6 +11,7 @@ This module requires the following modules:
 
  * Python version: 2.7
  * Python packages: enum, ISStreamer, smtplib
+ * `sudo pip install --upgrade google-api-python-client`
  
 
 INSTALLATION

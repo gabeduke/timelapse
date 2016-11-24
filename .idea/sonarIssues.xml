@@ -18,6 +18,36 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/app/functions.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/app/mailer.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/app/properties.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/app/run.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/setup.py">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/wioLink/app/functions.py">
           <value>
             <set />
@@ -34,6 +64,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/wioLink/sensors.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/local/lib/python2.7/dist-packages/apiclient/__init__.py">
           <value>
             <set />
           </value>
