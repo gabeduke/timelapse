@@ -28,7 +28,7 @@ setup(
 
     # Dependent packages (distributions)
     install_requires=[
-        "httplib2", "google-api-python-client", "python-forecastio"
+        "requests", "python-forecastio"
 
     ],
 )

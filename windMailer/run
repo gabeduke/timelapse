@@ -1,24 +1,12 @@
 #!/usr/bin/env python
-import json
-
 import forecastio
 import requests
-from mailer import SendMessage
 
 forecast_key = "be063e11c53854ceb6e27afed0057aec"
 lat = "37.5000327"
 lng = "-77.5628374"
 pushdroid_key = '35415ce80659263baf97541ef623ecc28de9ea714a8c1d2c'
 url = 'https://www.notifymyandroid.com/publicapi/notify'
-
-
-def sendMessage(message):
-    to = "gabeduke@gmail.com"
-    sender = "gabeduke@gmail.com"
-    subject = "ALERT: Wind gonna blow!"
-    msgHtml = message
-    msgPlain = message
-    SendMessage(sender, to, subject, msgHtml, msgPlain)
 
 
 forecast = forecastio.load_forecast(forecast_key, lat, lng)
