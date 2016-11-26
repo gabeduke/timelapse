@@ -1,9 +1,6 @@
 [submodule "bash/resty"]
 	path = bash/resty
 	url = https://github.com/micha/resty.git
-[submodule "bash/6449505"]
-	path = bash/6449505
-	url = https://gist.github.com/6449505.git
 [submodule "bash/slacktee"]
 	path = bash/slacktee
 	url = https://github.com/gabeduke/slacktee.git

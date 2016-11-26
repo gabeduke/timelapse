@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-key='35415ce80659263baf97541ef623ecc28de9ea714a8c1d2c'
-application='Timelapse View Notifier'
 
 cd "$(dirname "$0")"
 
@@ -15,10 +13,7 @@ log=$(git log --date=iso \
     --summary --show-notes --oneline --date-order)
 
 echo "$log" >> "tmpFile.txt"
+tmpFile.txt | slacktee
 popd
 
 rm -rf tmpdir
-
-. resty/resty -W 'https://www.notifymyandroid.com'
-
-POST /publicapi/notify "apikey=${key}" -d "application=${application}" -d "event=COMMITS" -d "description=${log}"
