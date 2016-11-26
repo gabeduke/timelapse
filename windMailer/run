@@ -16,8 +16,7 @@ print "-------------------------- DAILY --------------------------"
 for dailyData in byDay.data:
     wind = dailyData.windSpeed
     time = dailyData.time
-    wind_message = "Wind is expected to be " + str(wind) + "mph on " + str(time.strftime("%A"))
-    print wind_message
+    wind_message = "Wind is expected to be " + str(wind) + "mph on " + str(time.strftime("%A\n"))
 
     if wind > 8:
         params = {'apikey': pushdroid_key, 'application': 'Wind Speed Notifier', 'event': 'ALERT', 'description': wind_message}
