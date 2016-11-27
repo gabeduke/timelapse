@@ -5,16 +5,20 @@ import ConfigParser
 
 
 def set_config_file():
+    changed = False
     if not Config.get("API_KEYS", "web_hook"):
         i = raw_input("Please enter Slack Web Hook: ")
         Config.set("API_KEYS", "web_hook", i)
+        changed = True
 
     if not Config.get("API_KEYS", "forecast_key"):
         i = raw_input("Please enter ForecastIO (Darksky) Api Key: ")
         Config.set("API_KEYS", "forecast_key", i)
+        changed = True
 
-    print "Now that your configuration is set, please be sure to run:" \
-          " 'git update-index --assume-unchanged properties' this the windMailer dir"
+    if changed:
+        print "Now that your configuration is set,\n please be sure to run the following git command: " \
+              "\n\n\ngit update-index --assume-unchanged properties' this the windMailer dir"
 
 # initializing Config Parser
 Config = ConfigParser.ConfigParser()
