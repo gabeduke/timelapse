@@ -4,16 +4,11 @@ import slackweb
 import ConfigParser
 
 
-def set_config_file():
+def set_config_file(property_value, property_name):
     changed = False
-    if not Config.get("API_KEYS", "web_hook"):
-        i = raw_input("Please enter Slack Web Hook: ")
-        Config.set("API_KEYS", "web_hook", i)
-        changed = True
-
-    if not Config.get("API_KEYS", "forecast_key"):
-        i = raw_input("Please enter ForecastIO (Darksky) Api Key: ")
-        Config.set("API_KEYS", "forecast_key", i)
+    if not Config.get("API_KEYS", property_value):
+        i = raw_input("Please enter " + property_name + ": ")
+        Config.set("API_KEYS", property_value, i)
         changed = True
 
     if changed:
@@ -25,7 +20,8 @@ Config = ConfigParser.ConfigParser()
 Config.read("properties")
 
 # setting config file if not already configured
-set_config_file()
+set_config_file("web_hook", "Slack Web Hook")
+set_config_file("forecast_key", "ForecastIO (Darksky) Api Key")
 with open('properties', 'w') as configfile:
     Config.write(configfile)
 
