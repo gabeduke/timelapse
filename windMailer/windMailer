@@ -3,32 +3,39 @@ import forecastio
 import slackweb
 import ConfigParser
 
+
+def set_config_file():
+    if not Config.get("API_KEYS", "web_hook"):
+        i = raw_input("Please enter Slack Web Hook: ")
+        Config.set("API_KEYS", "web_hook", i)
+
+    if not Config.get("API_KEYS", "forecast_key"):
+        i = raw_input("Please enter ForecastIO (Darksky) Api Key: ")
+        Config.set("API_KEYS", "forecast_key", i)
+
+    print "Now that your configuration is set, please be sure to run:" \
+          " 'git update-index --assume-unchanged properties' this the windMailer dir"
+
+# initializing Config Parser
 Config = ConfigParser.ConfigParser()
 Config.read("properties")
 
-if not Config.get("API_KEYS", "web_hook"):
-    i = raw_input("Please enter Slack Web Hook: ")
-    Config.set("API_KEYS", "web_hook", i)\
-
-if not Config.get("API_KEYS", "forecast_key"):
-    i = raw_input("Please enter ForecastIO (Darksky) Api Key: ")
-    Config.set("API_KEYS", "forecast_key", i)
-
+# setting config file if not already configured
+set_config_file()
 with open('properties', 'w') as configfile:
     Config.write(configfile)
 
+# initializing variables
 web_hook = Config.get("API_KEYS", "web_hook")
 forecast_key = Config.get("API_KEYS", "forecast_key")
+lat = Config.get("VARS", "lat")
+lng = Config.get("VARS", "lng")
+w = ""  # initializing in global context
 
-lat = "37.5000327"
-lng = "-77.5628374"
-
-
+# fetching weather
 forecast = forecastio.load_forecast(forecast_key, lat, lng)
 byDay = forecast.daily()
-w = ""
 
-print "-------------------------- DAILY --------------------------"
 for dailyData in byDay.data:
     wind = dailyData.windSpeed
     time = dailyData.time

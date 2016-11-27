@@ -2,3 +2,7 @@
 web_hook =
 forecast_key =
 
+[VARS]
+lat = 37.5000327
+lng = -77.5628374
+
