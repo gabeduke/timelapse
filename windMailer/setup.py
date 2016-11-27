@@ -1,4 +1,5 @@
 from setuptools import setup
+from properties import slack_token
 
 setup(
     # Application name:
@@ -28,7 +29,10 @@ setup(
 
     # Dependent packages (distributions)
     install_requires=[
-        "requests", "python-forecastio"
+        "slacker", "python-forecastio"
 
     ],
+
 )
+
+slackToken = raw_input("Please enter Slack API Token: ")

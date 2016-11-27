@@ -1,16 +1,19 @@
 #!/usr/bin/env python
 import forecastio
-import requests
+import subprocess
+from slacker import Slacker
+from properties import slack_token
+
+slack = Slacker(slack_token)
 
 forecast_key = "be063e11c53854ceb6e27afed0057aec"
 lat = "37.5000327"
 lng = "-77.5628374"
-pushdroid_key = '35415ce80659263baf97541ef623ecc28de9ea714a8c1d2c'
-url = 'https://www.notifymyandroid.com/publicapi/notify'
 
 
 forecast = forecastio.load_forecast(forecast_key, lat, lng)
 byDay = forecast.daily()
+w = ""
 
 print "-------------------------- DAILY --------------------------"
 for dailyData in byDay.data:
@@ -19,5 +22,6 @@ for dailyData in byDay.data:
     wind_message = "Wind is expected to be " + str(wind) + "mph on " + str(time.strftime("%A\n"))
 
     if wind > 8:
-        params = {'apikey': pushdroid_key, 'application': 'Wind Speed Notifier', 'event': 'ALERT', 'description': wind_message}
-        r = requests.post(url, params=params)
+        w += wind_message
+
+slack.chat.post_message('#sandbox', w)
