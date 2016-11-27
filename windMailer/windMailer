@@ -44,5 +44,5 @@ for dailyData in byDay.data:
     if wind > 8:
         w += wind_message
 
-slack = slackweb.Slack(url=web_hook)
+slack = slackweb.Slack(url=web_hook, channel="#dukeman_alerts")
 slack.notify(text=w)
