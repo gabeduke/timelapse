@@ -1,12 +1,25 @@
 #!/usr/bin/env python
 import forecastio
-import subprocess
-from slacker import Slacker
-from properties import slack_token
+import slackweb
+import ConfigParser
 
-slack = Slacker(slack_token)
+Config = ConfigParser.ConfigParser()
+Config.read("properties")
 
-forecast_key = "be063e11c53854ceb6e27afed0057aec"
+if not Config.get("API_KEYS", "web_hook"):
+    i = raw_input("Please enter Slack Web Hook: ")
+    Config.set("API_KEYS", "web_hook", i)\
+
+if not Config.get("API_KEYS", "forecast_key"):
+    i = raw_input("Please enter ForecastIO (Darksky) Api Key: ")
+    Config.set("API_KEYS", "forecast_key", i)
+
+with open('properties', 'w') as configfile:
+    Config.write(configfile)
+
+web_hook = Config.get("API_KEYS", "web_hook")
+forecast_key = Config.get("API_KEYS", "forecast_key")
+
 lat = "37.5000327"
 lng = "-77.5628374"
 
@@ -24,4 +37,5 @@ for dailyData in byDay.data:
     if wind > 8:
         w += wind_message
 
-slack.chat.post_message('#sandbox', w)
+slack = slackweb.Slack(url=web_hook)
+slack.notify(text=w)

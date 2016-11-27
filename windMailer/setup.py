@@ -1,5 +1,4 @@
 from setuptools import setup
-from properties import slack_token
 
 setup(
     # Application name:
@@ -34,5 +33,3 @@ setup(
     ],
 
 )
-
-slackToken = raw_input("Please enter Slack API Token: ")
