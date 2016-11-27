@@ -4,3 +4,6 @@
 [submodule "bash/slacktee"]
 	path = bash/slacktee
 	url = https://github.com/gabeduke/slacktee.git
+[submodule "windMailer"]
+	path = windMailer
+	url = https://github.com/gabeduke/windMailer.git
