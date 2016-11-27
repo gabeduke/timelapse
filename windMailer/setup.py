@@ -28,7 +28,7 @@ setup(
 
     # Dependent packages (distributions)
     install_requires=[
-        "slacker", "python-forecastio"
+        "slackweb", "python-forecastio", "ConfigParser"
 
     ],
 
