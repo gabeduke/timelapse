@@ -23,24 +23,10 @@ def get_wio_sensor_data(node, token):
     l = []
     for x in range(0, 3):
         req = requests.get(wio_url + node.value + token)
-        print "Response \nCode: " + str(req.status_code) + "\nBody: " + req.content
+        print "Query Response \nCode: " + str(req.status_code) + "\nBody: " + req.content
 
         resp_dict = json.loads(req.content)  # loads the request into a dictonary for parsing
         sensor_data = resp_dict[node.name]  # parses the value from the request dictionary
-
-        l.append(sensor_data)
-
-    print(l)
-    return mean(l)
-
-
-def get_wio_sensor_data2(nodeName, nodeValue, token):
-    l = []
-    for x in range(0, 3):
-        req = requests.get(wio_url + nodeValue + token)
-
-        resp_dict = json.loads(req.content)  # loads the request into a dictonary for parsing
-        sensor_data = resp_dict[nodeName]  # parses the value from the request dictionary
 
         l.append(sensor_data)
 
