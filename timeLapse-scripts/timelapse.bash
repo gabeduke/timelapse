@@ -33,8 +33,8 @@ LAVCOPTS="vcodec=mpeg4:vbitrate=21600000"
 # each RAW image using darktable-cli while incrementing
 # the counter and comparing to the total variable above
 function export() {
-TOTAL="$(ls *.CR2 -l | wc -l)"
-    for i in $( ls *.CR2 ); do
+TOTAL="$(ls *[.CR2][.cr2]* -l | wc -l)"
+    for i in $( ls *[.CR2][.cr2]* ); do
         darktable-cli $i $i.xmp $EXPORT/$i.jpg
         COUNTER=$((COUNTER+1))
         printf "%s/%s\n" "$COUNTER" "$TOTAL"

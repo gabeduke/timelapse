@@ -34,7 +34,7 @@ def print_variables():
 
 
 def export_render():
-    file_extensions = '.CR2'
+    file_extensions = ['.CR2', '.cr2']
     for filename in os.listdir(os.curdir):
         if filename.endswith(file_extensions):
             raw_dir = True
@@ -51,9 +51,10 @@ def export_render():
 
 
 while loop:
+    print_menu()
     choice = input("Make an assessment: ")
 
-    if choice == 1:
+    if choice == 1:  # TODO these functions need to wait until the bash commands finish to move one & print output
         export()
         list_files()
         render()
