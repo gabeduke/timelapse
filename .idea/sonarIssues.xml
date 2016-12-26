@@ -13,7 +13,147 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.regexp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/fragment.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/FlexFormPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/LoginFormPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/MainMenuPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/adminPortal/VariablesFormPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/onboarding/EobDashboardFormPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/onboarding/OnboardingFormPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/test/BboWebTestSuiteConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/regression/CompanyTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/regression/ReceivablesTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/regression/User/UserTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/regression/admin/adminPageTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/regression/managerPortal/ManagerTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/regression/primaryContactPortal/DocumentTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/sanity/ApproverTestsSanity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/sanity/CompanyTestsSanity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/sanity/OnboardingTestsSanity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/web-automation-core/src/main/java/com/bullhorn/automation/web/util/FlexWebDriverUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/web-automation-core/src/main/java/com/bullhorn/automation/web/util/WebDriverUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bash/bash_aliases">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bash/enfuse">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bash/notify-remote">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bash/tmp.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/timeLapse-scripts/timelapse.bash">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/timeLapse-scripts/timelapseHelper/scripts.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/timeLapse-scripts/timelapseHelper/setup.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/timeLapse-scripts/timelapseHelper/timelapse.py">
           <value>
             <set />
           </value>
@@ -39,6 +179,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/wioLeet/app/run.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/app/wio1">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wioLeet/app/wio2">
           <value>
             <set />
           </value>
