@@ -19,21 +19,7 @@ def mean(numbers):
     return float(sum(numbers)) / max(len(numbers), 1)
 
 
-def get_wio_sensor_data(node, token):
-    l = []
-    for x in range(0, 3):
-        req = requests.get(wio_url + node.value + token)
-
-        resp_dict = json.loads(req.content)  # loads the request into a dictonary for parsing
-        sensor_data = resp_dict[node.name]  # parses the value from the request dictionary
-
-        l.append(sensor_data)
-
-    print(l)
-    return mean(l)
-
-
-def get_wio_sensor_data2(nodeName, nodeValue, token):
+def get_wio_sensor_data(nodeName, nodeValue, token):
     l = []
     for x in range(0, 3):
         req = requests.get(wio_url + nodeValue + token)
@@ -45,6 +31,22 @@ def get_wio_sensor_data2(nodeName, nodeValue, token):
 
     print(l)
     return mean(l)
+
+
+def get_temperature(token):
+    get_wio_sensor_data(NodeProperties.fahrenheit_degree.name, NodeProperties.fahrenheit_degree.value, token)
+
+
+def get_humidity(token):
+    get_wio_sensor_data(NodeProperties.humidity.name, NodeProperties.humidity.value, token)
+
+
+def get_moisture(token):
+    get_wio_sensor_data(NodeProperties.moisture.name, NodeProperties.moisture.value, token)
+
+
+def get_airQuality(token):
+    get_wio_sensor_data("airQuality", wio_airQuality, token)
 
 
 def post_data_to_thinkspeak(data):

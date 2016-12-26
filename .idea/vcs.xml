@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bash/resty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bash/slacktee" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/windMailer" vcs="Git" />
   </component>
 </project>
