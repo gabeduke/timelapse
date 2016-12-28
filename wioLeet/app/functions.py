@@ -34,19 +34,19 @@ def get_wio_sensor_data(nodeName, nodeValue, token):
 
 
 def get_temperature(token):
-    get_wio_sensor_data(NodeProperties.fahrenheit_degree.name, NodeProperties.fahrenheit_degree.value, token)
+    return get_wio_sensor_data(NodeProperties.fahrenheit_degree.name, NodeProperties.fahrenheit_degree.value, token)
 
 
 def get_humidity(token):
-    get_wio_sensor_data(NodeProperties.humidity.name, NodeProperties.humidity.value, token)
+    return get_wio_sensor_data(NodeProperties.humidity.name, NodeProperties.humidity.value, token)
 
 
 def get_moisture(token):
-    get_wio_sensor_data(NodeProperties.moisture.name, NodeProperties.moisture.value, token)
+    return get_wio_sensor_data(NodeProperties.moisture.name, NodeProperties.moisture.value, token)
 
 
 def get_airQuality(token):
-    get_wio_sensor_data("airQuality", wio_airQuality, token)
+    return get_wio_sensor_data("airQuality", wio_airQuality, token)
 
 
 def post_data_to_thinkspeak(data):

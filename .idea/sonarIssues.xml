@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/UserFormPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-page-objects/src/main/java/com/bullhorn/automation/web/page/common/adminPortal/VariablesFormPage.java">
           <value>
             <set />
@@ -104,6 +109,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/sanity/OnboardingTestsSanity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/bbo-regression/src/test/java/com/bullhorn/automation/bbo/sanity/UserTestsSanity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/web-automation-core/src/main/java/com/bullhorn/automation/web/page/pathing/bbo/user/FlexUserListFormPaths.java">
           <value>
             <set />
           </value>
