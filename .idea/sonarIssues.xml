@@ -128,6 +128,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/web-automation-core/src/main/java/com/bullhorn/automation/web/util/JQuery.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../bbo_automation/web-automation/web-automation-core/src/main/java/com/bullhorn/automation/web/util/WebDriverUtil.java">
           <value>
             <set />
