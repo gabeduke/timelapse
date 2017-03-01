@@ -1,9 +1,0 @@
-"api_key": "dukeman",
-"api": [
-  {
-  "certfile": "/root/server.pem",
-  "module": "sinks.generic.nocheroPost",
-  "name": "127.0.0.1",
-  "port": 9002
-  }
-]
