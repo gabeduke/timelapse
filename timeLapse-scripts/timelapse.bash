@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script Parameters
-NAME=${1:-rendered}
+NAME=${PWD##*/}
 FPS=${2:-24}
 QUALITY=${3:-normal}
 DIRECTORY=$(pwd)
@@ -49,7 +49,7 @@ function listFiles {
 # render
 function render () {
     cd $EXPORT && mencoder -nosound -ovc lavc -lavcopts $LAVCOPTS -o ~/Videos/$NAME.avi -mf type=jpeg:fps=$FPS mf://@files.txt -vf scale=1920:1080
-    notify-send -t 5000 "Your timelapse has finished rendering"
+    notify-send -t 30000 "Your timelapse: $NAME has finished rendering"
 }
 
 function cleanup {
